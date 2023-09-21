@@ -48,6 +48,22 @@ person.save()
 
 // fruit.save();
 
+Fruit.updateOne({_id: "650b4f6259d3f3f5e236511e"}, {name: "Peachy"})
+  .then(() => {
+    console.log("Successfully Updated");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+  Fruit.deleteMany({ name: "Apple" })
+  .then(() => {
+    console.log("Successfully Deleted");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
  const getFruits = async () => {
   try {
     const fruits = await Fruit.find({});
@@ -66,5 +82,7 @@ getFruits()
     });
   })
   .catch(error => console.error(error));
+
+  
  
- 
+  
